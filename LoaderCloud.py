@@ -61,4 +61,3 @@ print(f"Created {len(all_splits)} document splits.")
 print("Adding documents to the vector store...")
 _ = vector_store.add_documents(documents=all_splits)
 print("Indexing complete.")
-
