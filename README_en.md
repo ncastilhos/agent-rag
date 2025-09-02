@@ -1,14 +1,14 @@
 # AgentRAG
 
-Este projeto implementa um agente de Geração Aumentada por Recuperação (RAG) usando Langchain, ChromaDB e OpenAI para o Agente, e FastAPI para servi-lo como uma API RESTful.
+This project implements a Retrieval-Augmented Generation (RAG) agent using Langchain, ChromaDB, and OpenAI's for the Agent and FastAPI to serve it as a RESTful API.
 
-## Como Começar
+## Getting Started
 
-Siga estes passos para configurar e executar o projeto.
+Follow these steps to set up and run the project.
 
-### 1. Configurar Ambiente Virtual
+### 1. Setup Virtual Environment
 
-**No Windows:**
+**On Windows:**
 ```bash
 py -m venv .venv
 .venv\Scripts\activate
