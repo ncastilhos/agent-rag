@@ -69,11 +69,13 @@ def clean_markdown_files(*directories):
                     content = re.sub(r'DGT TECNOLOGIA LTDA(\n(.*)){7}', '', content)
                     content = re.sub(r'DGT TECNOLOGIA LTDA', '', content)
                     content = re.sub(r'R. Evaristo José Fernandes, 121,(\n(.*)){9}', '', content)
-                    content = re.sub(r'.*\.\w{2,4}.*', '', content)
+                    # content = re.sub(r'.*\.\w{2,4}.*', '', content)
                     content = re.sub(r'### Notes:\n(.*)', '', content)
                     content = re.sub(r'.*(\n.*){12}.*PADRÃO\n\n(Elaborador).*(\n.*){6}', '', content)
                     #Sumário
                     content = re.sub(r'.*\.{4}.*\n.*|^\d\.\d$|^SUMÁRIO$|^\d{2}$\n.*', '', content, flags=re.MULTILINE)
+                    #URL
+                    content = re.sub(r'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)', '', content)
 
 
                     #### Notes:\n(.*)
@@ -96,6 +98,5 @@ if __name__ == "__main__":
     dest_folder = source_folder + "_md"
     convert_documents(source_folder, dest_folder)
 
-    # You can add more directories to this list
     directories_to_clean = ["Docs_md", "ScrapedData"]
     clean_markdown_files(*directories_to_clean)
